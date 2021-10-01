@@ -310,7 +310,7 @@ int yy=0;
 //int tt=0;
 
 void ISR1(){
-  if(select == 6){
+  if(select == 7){
     select = 0;
   }
   else{
@@ -396,7 +396,7 @@ void loop() {
     display.display();
 
   }
-  else{
+  else if (select == 6){
     display.clearDisplay();
     display.drawBitmap(xx, yy, STOP, 32, 32, 1);
     delay(500);
@@ -404,6 +404,12 @@ void loop() {
     
     display.clearDisplay();
     display.drawBitmap(xx, yy, inv, 32, 32, 1);
+    delay(500);
+    display.display();
+  }
+  else{
+    display.clearDisplay();
+    display.drawBitmap(xx, yy, BOBINHO, 32, 32, 1);
     delay(500);
     display.display();
   }
